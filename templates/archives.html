@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block description %}文章存档{%end%}
+{% block title %}文章存档{% end %}
+{% block content %}
+
+<ul class=" articles">
+    {% for blog in blogs %}
+    <li> 
+        <a href="/{{blog.uri }}"><span class="date"><small>{{blog.create_at.strftime("%Y-%m-%d") }}</small></span>
+        {{blog.title}}</a>
+    </li>
+    {% end %}
+</ul>
+{% end %}
+ 
+{% block panel %} {%include "widget/panel.html"%}{%end%}

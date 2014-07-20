@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block description %}文章存档{%end%}
+{% block title %}文章存档{% end %}
+{% block content %}
+
+<form action="/admin/publish/" method="post">
+    <select name="blog_id">
+        {%for archive in archives %}
+        <option value="{{archive}}">
+            {{archive}}
+        </option>
+        {% end %}
+    </select>
+    <input type="submit" value="submit">
+    {% raw xsrf_form_html() %}
+</form>
+
+
+
+{% end %}
+
+{% block panel %} {%include "widget/panel.html"%}{%end%}
+

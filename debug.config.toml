@@ -1,0 +1,9 @@
+PROJECT_DIR = "E:/workspace/my/note/note"
+
+REDIS_HOST = "localhost"
+REDIS_PORT = 6379
+REDIS_DB = 0
+
+USERNAME = "admin"
+PASSWORD = "123"
+

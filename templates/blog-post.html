@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% autoescape None %}
+{% block description %}{{blog.title}}{%end%}
+{% block title %}{{blog.title}}{% end %}
+
+{% block content %}
+    <h2>{{blog.title}}</h2>
+    {{blog.content}}
+    {% include "widget/share.html" %}
+    {% include "widget/disqus.html" %}
+{% end %}
+
+{% block panel %} {%include "widget/panel.html"%}{%end%}
