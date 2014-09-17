@@ -21,5 +21,5 @@ url_patterns = [
     (r"/archives/?", ArchivesHandler),
     (r"/category/(.+)/?", CategoryHandler),
     (r"/about/?", AboutHandler),
-    (r"/(.+\.md)/?", ArticleHandler),
+    (r"/archive/(\S+)/?", ArticleHandler),
 ]

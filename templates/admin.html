@@ -4,10 +4,10 @@
 {% block content %}
 
 <form action="/admin/publish/" method="post">
-    <select name="blog_id">
+    <select name="blog_id" style="width: 100%;">
         {%for archive in archives %}
-        <option value="{{archive}}">
-            {{archive}}
+        <option value="{{archive[0]}}">
+            {{archive[1]}}
         </option>
         {% end %}
     </select>

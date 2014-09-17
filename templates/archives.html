@@ -6,8 +6,8 @@
 <ul class=" articles">
     {% for blog in blogs %}
     <li> 
-        <a href="/{{blog.uri }}"><span class="date"><small>{{blog.create_at.strftime("%Y-%m-%d") }}</small></span>
-        {{blog.title}}</a>
+        <span class="date"><small>{{blog.create_at.strftime("%Y-%m-%d") }}</small></span>
+        <a href="/archive/{{blog.id }}">{{blog.title}}</a>
     </li>
     {% end %}
 </ul>

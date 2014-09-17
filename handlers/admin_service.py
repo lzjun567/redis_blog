@@ -7,12 +7,14 @@ from tornado.web import authenticated
 import tornado.web
 from cache import cache
 from base import BaseHandler
+import utils
 
 
 class AdminHandler(BaseHandler):
     @tornado.web.authenticated
     def get(self):
         all_archives = self.redis.zrevrange("admin.blog.list", 0, -1)
+        all_archives = [(blog_id, utils.decrypt(blog_id)) for blog_id in all_archives]
         self.render('admin.html', archives=all_archives)
 
 
@@ -26,6 +28,7 @@ class AdminPublishHandler(BaseHandler):
             if not create_time:
                 self.write(u"文档不存在")
                 self.finish()
+                return
             else:
                 data.append((create_time, blog_id))
         for d in data:
